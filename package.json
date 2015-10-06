@@ -1,0 +1,23 @@
+{
+  "name": "SocialMail",
+  "version": "0.0.0",
+  "description": "Its just an illustration of Intranet mail service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abinthaha/Social-Mail"
+  },
+  "keywords": [
+    "Enthelum",
+    "vannal",
+    "vannu"
+  ],
+  "author": "Nammal thanne",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/abinthaha/Social-Mail/issues"
+  }
+}
