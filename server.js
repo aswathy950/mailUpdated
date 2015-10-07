@@ -7,7 +7,7 @@ app.set('views', __dirname);
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 
-require('./router/router.js')(app);
+require('./mail/router/router.js')(app);
 
 
 
