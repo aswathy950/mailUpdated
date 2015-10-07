@@ -6,6 +6,7 @@ var rename = require("gulp-rename");
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 
+<<<<<<< HEAD
 // default task
 var paths = {
   sass: ['./assets/scss/*.scss'],
@@ -41,8 +42,11 @@ gulp.task('watch', function() {
     ], ['index']);
 });
 
+=======
+//Default tasks
+>>>>>>> 9839e8abd3f9e48d922f102b39d01f5e8ec3b068
 gulp.task('scripts', function() {
-  return gulp.src('./assets/js/*.js')
+  return gulp.src('./assets/js/*.js', './assets/plugin/*.js')
     .pipe(concat('app.js'))
     .pipe(gulp.dest('./build/js/'))
     .pipe(uglify())
