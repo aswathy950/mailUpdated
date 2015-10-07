@@ -6,10 +6,9 @@ var rename = require("gulp-rename");
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 
-// default task
-
+//Default tasks
 gulp.task('scripts', function() {
-  return gulp.src('./assets/js/*.js')
+  return gulp.src('./assets/js/*.js', './assets/plugin/*.js')
     .pipe(concat('app.js'))
     .pipe(gulp.dest('./build/js/'))
     .pipe(uglify())
