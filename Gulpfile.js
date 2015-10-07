@@ -9,28 +9,28 @@ var uglify = require('gulp-uglify');
 // default task
 
 gulp.task('scripts', function() {
-  return gulp.src('./public/app/assets/js/*.js')
+  return gulp.src('./assets/js/*.js')
     .pipe(concat('app.js'))
-    .pipe(gulp.dest('./public/app/build/js/'))
+    .pipe(gulp.dest('./build/js/'))
     .pipe(uglify())
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest('./public/app/build/js/'));
+    .pipe(gulp.dest('./build/js/'));
 });
 
 gulp.task('styles', function(){
-    return gulp.src('./public/app/assets/scss/*.scss')
+    return gulp.src('./assets/scss/*.scss')
         .pipe(sass())
-        .pipe(gulp.dest('./public/app/build/css/'))
+        .pipe(gulp.dest('./build/css/'))
         .pipe(cssmin())
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest('./public/app/build/css/'));
+        .pipe(gulp.dest('./build/css/'));
 });
 
 gulp.task('watch', function(){
-    gulp.watch('./public/app/assets/js/*.js', ['scripts']);
-    gulp.watch('./public/app/assets/scss/*.scss', ['styles']);
+    gulp.watch('./assets/js/*.js', ['scripts']);
+    gulp.watch('./assets/scss/*.scss', ['styles']);
 });
