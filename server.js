@@ -1,5 +1,6 @@
 var express = require('express');
 var ejs = require('ejs');
+var mysql = require('mysql');
 var app     = express();
 
 app.use(express.static('public'));
@@ -8,7 +9,7 @@ app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 
 require('./mail/router/router.js')(app);
-
+require('./mail/router/index.js')(app);
 
 
 

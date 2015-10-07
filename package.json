@@ -22,7 +22,9 @@
   },
   "dependencies": {
     "express": "~4.13.3",
-    "browserify": "~11.2.0"
+    "browserify": "~11.2.0",
+    "gulp": "~3.9.0",
+    "gulp-inject": "~3.0.0"
   },
   "devDependencies": {
     "gulp": "~3.9.0",
