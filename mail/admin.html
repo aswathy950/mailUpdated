@@ -46,18 +46,25 @@
            <nav class="nav-wrapper">
                <a href="#" class="brand-logo"><img src="assets/img/Qblogo.png" alt="" width="70%"/></a>
              <ul class="right hide-on-med-and-down">
+                 <li><a ui-sref="home">Home</a></li>
                  <li><a ui-sref="register">Create Account</a></li>
                  <li><a ui-sref="delete">Delete Account</a></li>
                  <li><a ui-sref="update">Update Account</a></li>
+
              </ul>
              <ul id="menu"  class="side-nav" onclick="hide()">
                  <li><a ui-sref="register">Create Account</a></li>
                  <li><a ui-sref="delete">Delete Account</a></li>
                  <li><a ui-sref="update">Update Account</a></li>
+                 <li><a ui-sref="compose">Compose</a></li>
+                 <li><a ui-sref="inbox">Inbox</a></li>
+                 <li><a ui-sref="sent">Sent Item</a></li>
+                 <li><a ui-sref="">Logout</a></li>
+
              </ul>
              <a href="#" data-activates="slide-out" class="button-collapse" onclick="show_menu()" ><i class="mdi-navigation-menu"></i></a>
             </nav>
-
+            <a class="logout" href="#">logout</a>
        <div class="container">
             <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
             <div ui-view></div>
