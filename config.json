@@ -1,0 +1,8 @@
+{
+  "DBConfig" : {
+    "host" : "localhost",
+    "user" : "root",
+    "password" : "qburst",
+    "database" : "gmail"
+  }
+}
