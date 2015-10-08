@@ -7,7 +7,7 @@ module.exports =function(app) {
          username : req.body.username,
          password : req.body.password
     };
-    var sqlQuery = 'SELECT * from users where email = ? and password = ?'
+    var sqlQuery = 'SELECT * from admin where username = ? and password = ?'
     sql.query(sqlQuery,[response.username, response.password], function(err, rows, fields) {
       if (!err){
         console.log('The solution is: ', rows);

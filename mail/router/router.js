@@ -14,7 +14,7 @@ module.exports = function(app) {
   app.get('/adminloginpage',function(req,res){
     res.render('mail/admin.html')
   });
-  
+
   app.get('/error',function(req,res){
     res.render('mail/error.html')
   });
