@@ -10,7 +10,8 @@ app.engine('html', require('ejs').renderFile);
 
 require('./mail/router/router.js')(app);
 require('./mail/router/index.js')(app);
-
+require('./mail/router/createuser.js')(app);
+require('./mail/router/deleteuser.js')(app);
 
 
 
