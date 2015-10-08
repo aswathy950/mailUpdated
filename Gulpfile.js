@@ -6,45 +6,6 @@ var rename = require("gulp-rename");
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 
-<<<<<<< HEAD
-// default task
-var paths = {
-  sass: ['./assets/scss/*.scss'],
-  javascript: [
-    './build/js/*.js',
-    './assets/plugin/*.js'
-    ],
-      css: [
-        './build/css/*.css'
-      ]
-};
-
-// default task
-gulp.task('index', function(){
-    return gulp.src('./mail/views/login.html')
-        .pipe(inject(
-            gulp.src(paths.javascript,
-                {read: false}), {relative: true}))
-        .pipe(gulp.dest('./mail/views/'));
-        // .pipe(inject(
-        //     gulp.src(paths.sass,
-        //       {read: false}), {relative: true}))
-        // .pipe(gulp.dest('./'));
-});
-
-gulp.task('default', ['sass', 'index']);
-
-gulp.task('watch', function() {
-    gulp.watch(paths.sass, ['sass']);
-    gulp.watch([
-      paths.javascript,
-      paths.css
-    ], ['index']);
-});
-
-=======
-//Default tasks
->>>>>>> 9839e8abd3f9e48d922f102b39d01f5e8ec3b068
 gulp.task('scripts', function() {
   return gulp.src('./assets/js/*.js', './assets/plugin/*.js')
     .pipe(concat('app.js'))
@@ -67,7 +28,7 @@ gulp.task('styles', function(){
         .pipe(gulp.dest('./build/css/'));
 });
 
-// gulp.task('watch', function(){
-//     gulp.watch('./assets/js/*.js', ['scripts']);
-//     gulp.watch('./assets/scss/*.scss', ['styles']);
-// });
+gulp.task('watch', function(){
+    gulp.watch('./assets/js/*.js', ['scripts']);
+    gulp.watch('./assets/scss/*.scss', ['styles']);
+});
