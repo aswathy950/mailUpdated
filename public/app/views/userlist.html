@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>home</title>
+        <title>User List</title>
         <link rel="shortcut icon" href="assets/img/qbicon.png" type="image/x-icon" />
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
         <link href="assets/css/styles.css" rel="stylesheet">
@@ -10,19 +10,15 @@
         <script src="app/controllers/homeController.js" charset="utf-8"></script>
     </head>
     <body>
-        <div ng-app="homeapp">
-            <div ng-controller="homeController">
-                <div class="sidebar" >
-                    <ul>
-                        <a ui-sref="compose"><li>Compose</li></a>
-                        <a ui-sref="inbox"><li>Inbox</li></a>
-                        <a ui-sref="sentbox"><li>Sent Item</li></a>
-                    </ul>
-                </div>
+        <div ng-app="userlistApp">
+            <div class="userlist" ng-controller="userlistController">
+                <ul>
+                    <a sref="#"><li ng-repeat="user in users">{{user}}</li></a>
+                    gsgdilsud;SOD
+                </ul>
+            </div>
+            <div ng-view>
 
-                <div ng-view>
-
-                </div>
             </div>
         </div>
     </body>

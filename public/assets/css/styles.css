@@ -5,7 +5,7 @@
     margin: 0px auto 25px;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     border-radius: 2px;
-    margin-top: 1%;
+    margin-top: 2%;
 }
 .circle{
     display: block;
@@ -113,7 +113,27 @@ a{
         padding: 10px 0px;
     }
     h5{
-        background-color: blanchedalmond;
-        padding: 2px;
+        text-decoration: underline;
+    }
+}
+#menu li:last-child{
+    background-color: firebrick;
+}
+#menu li:last-child a{
+    color: white;
+    font-weight: 700;
+}
+.logout{
+    display: inline-block;
+    float: right;
+    padding: 30px;
+}
+@media (max-width: 992px){
+
+    .logout{
+        display: none !important;
+    }
+    .sidebar{
+        display: none;
     }
 }

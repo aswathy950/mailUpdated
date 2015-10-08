@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    hai
-  </body>
+    <head>
+        <meta charset="utf-8">
+        <title>home</title>
+        <link rel="shortcut icon" href="assets/img/qbicon.png" type="image/x-icon" />
+        <script src="app/controllers/homeController.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div ng-app="homeapp">
+            <div ng-controller="homeController">
+                <div class="sidebar">
+                    <ul>
+                        <a ui-sref="compose"><li>Compose</li></a>
+                        <a ui-sref="inbox"><li>Inbox</li></a>
+                        <a ui-sref="sentbox"><li>Sent Item</li></a>
+                    </ul>
+                </div>
+
+                <div ng-view>
+
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
