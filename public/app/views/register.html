@@ -1,5 +1,4 @@
-
-        <div class="login" id="register">
+ <div class="login" id="register">
             <form class="col s12" action="" method="post">
                 <h5>Create Account</h5>
               <div class="row">
@@ -36,11 +35,13 @@
                   <input id="Telephone" type="tel" name="Telephone" class="validate"  required>
                   <label for="Telephone">Telephone</label>
                 </div><div class="input-field col s12">
-                  <input id="password" type="password" name="password" class="validate"  required>
+                  <input id="password" type="password" name="password" class="validate" ng-model="registration.user.password" required>
                   <label for="password">Choose password</label>
                 </div><div class="input-field col s12">
-                  <input id="" type="password" name="repass" class="validate"  required>
-                  <label for="repass">Confirm Password</label>
+                  <input id="" type="password" name="confirmPassword" class="validate" ng-model="registration.user.confirmPassword"  required>
+                  <label for="confirmPassword">Confirm Password</label>
+                  <!-- <div ng-messages="registrationForm.confirmPassword.$error"
+                          ng-messages-include="messages.html"></div> -->
                 </div>
                 <div class="input-field col s">
                 <button class="btn waves-effect waves-light" type="submit" name="submit" value="register">Create</button>

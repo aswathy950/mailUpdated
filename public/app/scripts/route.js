@@ -34,7 +34,11 @@ adminapp.config(function($stateProvider, $urlRouterProvider) {
           templateUrl: 'app/views/sent.html',
 
             })
+    .state('userlist', {
+          url:'/userlist',
+          templateUrl: 'app/views/userlist.html',
 
+            })
 
 });
 homeApp.config(function ($stateProvider, $urlRouterProvider) {
@@ -57,3 +61,12 @@ homeApp.config(function ($stateProvider, $urlRouterProvider) {
     //
     //         })
 });
+// userlist.config(function ($stateProvider, $urlRouterProvider) {
+//     $urlRouterProvider.otherwise('/permissions');
+//     $stateProvider
+//     .state('permissions', {
+//             url:'/permissions',
+//             templateUrl: 'app/views/permissions.html',
+//
+//         })
+// )};
