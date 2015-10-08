@@ -14,12 +14,7 @@ module.exports =function(app) {
         if(rows[0] === null) {
           res.redirect('error');
         } else {
-          if(rows[0].usertype==='superadmin'){
           res.redirect('adminloginpage');
-         }
-        else {
-          res.redirect('userpage');
-        }
         }
       } else {
         console.log('Error while performing Query.');
