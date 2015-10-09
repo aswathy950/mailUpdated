@@ -19,7 +19,7 @@ var myApp = angular.module('myApp', ['ui.router']);
 // }
 
 myApp.controller('UserCtrl', function ($scope, $http, $window) {
-  $scope.user = {username: 'admin', password: 'admin'};
+  // $scope.user = {username: 'admin', password: 'admin'};
   $scope.isAuthenticated = false;
   $scope.isAdmin = false;
   $scope.welcome = '';
