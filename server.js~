@@ -7,14 +7,14 @@ var bodyParser = require('body-parser');
 
 var jwt = require('jsonwebtoken');
 var expressJwt = require('express-jwt');
-app.use(express.static('public'))
+
 
 var secret = 'asathoma satgamaya thamasoma jyothirgayama';
 
 app.use('/api', expressJwt({secret: secret}));
 
 app.use(bodyParser.json());
-app.use('/', express.static(__dirname + '/'));
+app.use('/mail', express.static(__dirname + '/mail'));
 
 app.use(function(err, req, res, next){
   if (err.constructor.name === 'UnauthorizedError') {

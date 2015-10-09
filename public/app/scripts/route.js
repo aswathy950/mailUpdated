@@ -1,4 +1,4 @@
-adminapp.config(function($stateProvider, $urlRouterProvider) {
+myApp.config(function($stateProvider, $urlRouterProvider) {
 
      $urlRouterProvider.otherwise('/home');
 
@@ -23,7 +23,7 @@ adminapp.config(function($stateProvider, $urlRouterProvider) {
           templateUrl: 'app/views/home.html',
 
             })
-    $stateProvider
+
     .state('inbox', {
             url:'/inbox',
             templateUrl: 'app/views/inbox.html',
@@ -41,32 +41,32 @@ adminapp.config(function($stateProvider, $urlRouterProvider) {
             })
 
 });
-homeApp.config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/inbox');
-
-    $stateProvider
-    .state('inbox', {
-            url:'/inbox',
-            templateUrl: 'app/views/inbox.html',
-
-        })
-    .state('sent', {
-          url:'/sent',
-          templateUrl: 'app/views/sent.html',
-
-            })
+// homeApp.config(function ($stateProvider, $urlRouterProvider) {
+//     $urlRouterProvider.otherwise('/inbox');
+//
+//     $stateProvider
+//     .state('inbox', {
+//             url:'/inbox',
+//             templateUrl: 'app/viewss/inbox.html',
+//
+//         })
+//     .state('sent', {
+//           url:'/sent',
+//           templateUrl: 'app/viewss/sent.html',
+//
+//             })
     // .state('update', {
     //       url:'/update',
-    //       templateUrl: 'app/views/update.html',
+    //       templateUrl: 'app/viewss/update.html',
     //
     //         })
-});
+// });
 // userlist.config(function ($stateProvider, $urlRouterProvider) {
 //     $urlRouterProvider.otherwise('/permissions');
 //     $stateProvider
 //     .state('permissions', {
 //             url:'/permissions',
-//             templateUrl: 'app/views/permissions.html',
+//             templateUrl: 'app/viewss/permissions.html',
 //
 //         })
 // )};
