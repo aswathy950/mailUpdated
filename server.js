@@ -2,13 +2,8 @@ var express = require('express');
 var ejs = require('ejs');
 var mysql = require('mysql');
 var app     = express();
-
 var bodyParser = require('body-parser');
-
-
 app.use(express.static('public'))
-
-
 app.use('/', express.static(__dirname + '/'));
 
 
