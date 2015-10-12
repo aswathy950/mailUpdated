@@ -1,11 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>App</title>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Qbmail</title>
+    <link rel="shortcut icon" href="assets/img/qbicon.png" type="image/x-icon" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/materialize.min.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="assets/plugin/materialize.min.js" charset="utf-8"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+    <script src="assets/plugin/angular-ui-router.min.js"></script>
+    <script src="app/scripts/auth.client.js"></script>
+    <script src="app/scripts/route.js"></script>
+    <script src="app/Factories/getMessages.js"></script>
+    <script src="app/Factories/mailInterceptor.js"></script>
 
-</head>
-<body>
-    sjdshhflkjhl
-</body>
+  </head>
+  <body ng-app="myApp">
+    <div ng-controller="UserCtrl">
+
+      <div ng-show="isAuthenticated">
+            <nav class="nav-wrapper">
+                <a href="#" class="brand-logo"><img src="assets/img/Qblogo.png" alt="" width="70%"/></a>
+              <ul class="right hide-on-med-and-down">
+                  <li><a ui-sref="home">Home</a></li>
+                  <li ng-show="isAdmin"><a ui-sref="userlist">Userlist</a></li>
+                  <li ng-show="isAdmin"><a ui-sref="register">Create Account</a></li>
+                  <li ng-show="isAdmin"><a ui-sref="delete">Delete Account</a></li>
+                  <li ng-show="isAdmin"><a ui-sref="update">Update Account</a></li>
+
+              </ul>
+              <ul id="menu"  class="side-nav" onclick="hide()">
+                  <li ng-show="isAdmin"><a ui-sref="register" >Create Account</a></li>
+                  <li ng-show="isAdmin"><a ui-sref="delete" >Delete Account</a></li>
+                  <li ng-show="isAdmin"><a ui-sref="update" >Update Account</a></li>
+                  <li><a ui-sref="compose">Compose</a></li>
+                  <li><a ui-sref="inbox">Inbox</a></li>
+                  <li><a ui-sref="sent">Sent Item</a></li>
+                  <li><a ng-click="logout()">Logout</a></li>
+
+              </ul>
+              <a href="#" data-activates="slide-out" class="button-collapse" onclick="show_menu()" ><i class="mdi-navigation-menu"></i></a>
+             </nav>
+             <a class="logout" ng-click="logout()" >logout</a>
+            <div class="container">
+                 <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+                <div ui-view></div>
+
+             </div>
+      </div>
+      <div class="logo" ng-show="!isAuthenticated">
+          <img src="assets/img/Qblogo.png" alt="" />
+      </div>
+      <div class="login" ng-show="!isAuthenticated">
+        <form class="col s12" action="" method="post"  ng-submit="submit()">
+            <div class="circle-mask" style="">
+                <canvas id="canvas" class="circle" width="96" height="96"></canvas>
+            </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <!-- <i class="material-icons prefix">account_circle</i> -->
+              <input id="Username" type="text" ng-model="user.username" name="username" class="validate" required>
+              <label for="Username">Username</label>
+            </div>
+            <div class="input-field col s12">
+              <!-- <i class="material-icons prefix">phone</i> -->
+              <input id="passwrod" ng-model="user.password" type="password" name="password" class="validate" required>
+              <label for="passwrod">Password</label>
+            </div>
+            <div ng-show="!isAuthenticated">{{error}}</div>
+            <div class="input-field col s">
+            <button class="btn waves-effect waves-light" type="submit" nname="submit" value="Login">Login</button>
+            </div>
+
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+    <script src="assets/js/menu.js" charset="utf-8"></script>
+  </body>
 </html>
