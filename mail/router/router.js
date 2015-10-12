@@ -7,12 +7,12 @@ module.exports = function(app) {
     res.render('mail/login.html');
   });
   app.get('/adminloginpage',function(req,res){
-    res.render('mail/admin.html')
+    res.render('mail/admin.html');
   });
   app.get('/userpage',function(req,res){
-    res.render('mail/user.html')
+    res.render('mail/user.html');
   });
   app.get('/error',function(req,res){
-    res.render('mail/error.html')
+    res.render('mail/error.html');
   });
 };
