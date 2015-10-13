@@ -1,0 +1,8 @@
+{
+  "DBConfig" : {
+    "host" : "localhost",
+    "user" : "root",
+    "password" : "achu123",
+    "database" : "gmail"
+  }
+}
