@@ -1,2 +1,2 @@
-homeApp.controller('homeController', function($scope){
-});
+// homeApp.controller('homeController', function($scope){
+// });

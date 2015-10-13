@@ -27,7 +27,7 @@ myApp.controller('UserCtrl', function ($scope, $http, $window) {
 
   $scope.submit = function () {
     $http
-      .post('/authenticate', $scope.user)
+      .post('/', $scope.user)
       .success(function (data, status, headers, config) {
         $window.sessionStorage.token = data.token;
         $scope.isAuthenticated = true;
