@@ -13,9 +13,9 @@ myApp.service('Mailsrv', function($http, $q) {
     return deferred.promise;
   };
 
-  service.fetchuser= function(params){
+  service.fetchuser= function(){
     var deferred = $q.defer();
-    $http.post("api/userdetails",params)
+    $http.post("api/userdetails")
     .success(function(data) {
        deferred.resolve(data);
     })

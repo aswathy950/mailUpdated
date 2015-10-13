@@ -4,10 +4,9 @@ myApp.controller('userController', [
   '$window',
   'Mailsrv',
   '$state',
-  'userList'
+  'userList',
   function($rootScope, $scope, $window, Mailsrv, $state,userList) {
-
-    console.log(userList);
-
+    console.log(userList.user_details);
+    $scope.users = userList.user_details;
   }
 ]);

@@ -16,7 +16,7 @@
     <script src="app/service/service.js" charset="utf-8"></script>
     <script src="app/controller/homecontroller.js" charset="utf-8"></script>
     <script src="app/controller/viewcontroller.js" charset="utf-8"></script>
-
+    <script src="app/controller/usercontroller.js" charset="utf-8"></script>
 
 
   </head>
@@ -28,7 +28,7 @@
                 <a href="#" class="brand-logo"><img src="assets/img/Qblogo.png" alt="" width="70%"/></a>
               <ul class="right hide-on-med-and-down">
                   <li><a ui-sref="home">Home</a></li>
-                  <li ng-show="isAdmin"><a ui-sref="userlist">Userlist</a></li>
+                  <li ng-show="isAdmin"><a ui-sref="userdetails">Userlist</a></li>
                   <li ng-show="isAdmin"><a ui-sref="register">Create Account</a></li>
                   <li ng-show="isAdmin"><a ui-sref="delete">Delete Account</a></li>
                   <li ng-show="isAdmin"><a ui-sref="update">Update Account</a></li>

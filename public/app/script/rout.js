@@ -39,8 +39,8 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
           templateUrl: 'app/views/sent.html',
 
             })
-    .state('userlist', {
-          url:'/userlist',
+    .state('userdetails', {
+          url:'/userdetails',
           templateUrl: 'app/views/userlist.html',
           controller:"userController",
           resolve:{
@@ -55,4 +55,10 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
           controller : ''
 
           })
+   .state('permissions', {
+          url: '/permissions',
+          templateUrl: 'app/views/permissions.html',
+          controller: ''
+
+        })
 });
