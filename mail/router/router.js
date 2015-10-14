@@ -48,7 +48,7 @@ module.exports = function(app) {
         // model.authenticateLogin(username, password)
         //   .then(success, failed);
 
-        var sqlQuery = "SELECT * from userss where username = ? and password = ?";
+        var sqlQuery = "SELECT * from users where username = ? and password = ?";
 
         var row;
 
@@ -64,27 +64,44 @@ module.exports = function(app) {
                 }
             }
         };
-
         sql.query(sqlQuery, [username, password], callback);
-
     });
 
     // GET: api/userdetails?user_id=xx
-    apiRoutes.get('/userdetails', function(req, res) {
-        var success = function() {
+    apiRoutes.post('/userdetails', urlencodedParser, function(req, res) {
+        var success = function(user) {
+            var token = jwt.sign(user, secret);
+            console.log(user);
             res.json({
-                message: 'hello world'
+                'success': true,
+                'token': token,
+                'user_details': user
             });
         };
 
         var failed = function() {
-            res.json({
-                message: 'hello world'
-            });
+            res.status(401)
+                .json({
+                    'success': false,
+                    'message': msg
+                });
         };
-
-        model.getUserDetails(req)
-            .then(success, failed);
+        var sqlQuery = "SELECT * from users";
+        var callback = function(err, rows, fields) {
+            if (!!err) {
+                deferred.reject(err);
+            } else {
+                console.log(rows);
+                if (!!rows.length) {
+                    success(rows);
+                } else {
+                    failed('Wrong user or password');
+                }
+            }
+        };
+        sql.query(sqlQuery, callback);
+        // model.getUserDetails(req)
+        //   .then(success, failed);
     });
 
     // GET: api/getthreads?user_id=xx

@@ -137,3 +137,10 @@ a{
         display: none;
     }
 }
+span {
+  margin-left: 5px;
+}
+.permission {
+  display: inline-block;
+  margin-left: 50px;
+}

@@ -1,8 +1,8 @@
 {
-  "DBConfig" : {
-    "host" : "localhost",
-    "user" : "root",
-    "password" : "achu123",
-    "database" : "gmail"
-  }
+    "DBConfig": {
+        "host": "localhost",
+        "user": "root",
+        "password": "1234",
+        "database": "gmail"
+    }
 }
