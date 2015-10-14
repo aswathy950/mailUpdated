@@ -1,13 +1,16 @@
 <div class="compose">
-   <form action="http://127.0.0.1:3000/compose" method="POST">
-<input type="text" name="recepiants" value="" placeholder="to">
- <input  type="text" name="cc" value="" placeholder="cc">
-   <input  type="text" name="bcc" value="" placeholder="bcc">
-<input  type="text" name="subject" value="" placeholder="subject">
-<textarea name="content" rows="8" cols="40" style="height:280px" ></textarea>
-<span> <input type='file' name='fileUploaded'></span>
-<span><input  type='submit' value="send" ></span>
+    <form action="http://127.0.0.1:3000/compose" method="POST">
+        <input type="text" id="recepiants" value="" placeholder="to">
+        <input type="text" id="cc" value="" placeholder="cc">
+        <input type="text" id="bcc" value="" placeholder="bcc">
+        <input type="text" id="subject" value="" placeholder="subject">
+        <textarea id="content" rows="8" cols="40" style="height:280px"></textarea>
+        <span>
+            <input type='file' id='fileUploaded'>
+        </span>
+        <span>
+            <input type='submit' value="send" onclick="sendMail()">
+        </span>
 
-</form>
+    </form>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js">

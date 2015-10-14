@@ -1,18 +1,18 @@
-var express = require('express');
-
-var bodyParser = require('body-parser');
-var urlencodedParser = bodyParser.urlencoded({
+var express             = require('express');
+var bodyParser          = require('body-parser');
+var urlencodedParser    = bodyParser.urlencoded({
     extended: false
 });
-var jwt = require('jsonwebtoken');
-var expressJwt = require('express-jwt');
-var secret = 'asathoma satgamaya thamasoma jyothirgayama';
+var jwt             = require('jsonwebtoken');
+var expressJwt      = require('express-jwt');
+var secret          = 'asathoma satgamaya thamasoma jyothirgayama';
 
 var sql = require('./db');
 var $q = require('q');
 
 var apiRoutes = express.Router();
-var model = require('../../model');
+var model       = require('../../model');
+var io          = require('socket.io');
 
 module.exports = function(app) {
     apiRoutes.get('/', function(req, res) {
@@ -22,14 +22,10 @@ module.exports = function(app) {
     });
 
     apiRoutes.post('/login', urlencodedParser, function(req, res) {
-        console.log(req);
         var username = req.body.username,
             password = req.body.password;
-        console.log(username);
-        console.log(password);
         var success = function(user) {
             var token = jwt.sign(user, secret);
-            console.log(user);
             res.json({
                 'success': true,
                 'token': token,
@@ -57,6 +53,7 @@ module.exports = function(app) {
                 deferred.reject(err);
             } else {
                 console.log(rows);
+
                 if (!!rows.length) {
                     success(rows[0]);
                 } else {
@@ -71,7 +68,6 @@ module.exports = function(app) {
     apiRoutes.post('/userdetails', urlencodedParser, function(req, res) {
         var success = function(user) {
             var token = jwt.sign(user, secret);
-            console.log(user);
             res.json({
                 'success': true,
                 'token': token,
