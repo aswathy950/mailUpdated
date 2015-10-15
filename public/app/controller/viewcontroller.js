@@ -1,6 +1,7 @@
-myApp.controller('viewController',[
-  '$scope','userData',
-  function($scope,inboxData){
-console.log(userData);
-console.log("haa");
-}]);
+myApp.controller('viewController', [
+    '$scope', 'inboxData',
+    function($scope, inboxData) {
+        console.log(userData);
+        console.log("haa");
+    }
+]);
