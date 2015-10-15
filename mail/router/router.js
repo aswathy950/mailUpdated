@@ -1,18 +1,16 @@
 var express             = require('express');
 var bodyParser          = require('body-parser');
 var urlencodedParser    = bodyParser.urlencoded({
-    extended: false
+    extended            : false
 });
-var jwt             = require('jsonwebtoken');
-var expressJwt      = require('express-jwt');
-var secret          = 'asathoma satgamaya thamasoma jyothirgayama';
-
-var sql = require('./db');
-var $q = require('q');
-
+var jwt                 = require('jsonwebtoken');
+var expressJwt          = require('express-jwt');
+var secret              = 'asathoma satgamaya thamasoma jyothirgayama';
+var sql                 = require('./db');
+var $q                  = require('q');
 var apiRoutes = express.Router();
-var model       = require('../../model');
-var io          = require('socket.io');
+var model = require('../../model');
+var io = require('socket.io');
 
 module.exports = function(app) {
     apiRoutes.get('/', function(req, res) {

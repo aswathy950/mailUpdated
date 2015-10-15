@@ -9,6 +9,8 @@ var port = 3000;
 var server  = require('http').Server(app);
 var io      = require('socket.io')(server);
 
+var clients = {};
+
 // app.use(io());
 app.use(express.static('public'));
 app.use('/', express.static(__dirname + '/'));
@@ -38,12 +40,22 @@ app.get('/', function(req, res) {
 });
 
 io.on('connection', function(socket) {
-    console.log('New User Connected');
 
-    socket.on('send_mail', function(data) {
-        console.log('Send Mail received in Server' +data.cc);
+    socket.on('SetUser', function(userName) {
+        socket.id = userName;
+        console.log(socket.id + ' : Connected');
+        clients[socket.id] = socket;
+    });
 
-        io.emit('receive', data);
-        console.log('Data received in Server resend to the Client : '+data);
+    // console.log(io.clients());
+    socket.on('send_mail', function(mail) {
+        console.log('Send Mail received in Server , To - ' +mail.to);
+
+        var sock = clients[mail.to];
+        sock.emit('receive', mail);
+        console.log('Data received in Server resend to the Client : '+mail);
+    });
+    socket.on('disconnect', function () {
+        console.log(socket.id +' : Disconnected');
     });
 });
