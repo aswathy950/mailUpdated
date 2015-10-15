@@ -1,5 +1,4 @@
 myApp.config(function($stateProvider, $urlRouterProvider) {
-
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
@@ -60,6 +59,5 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/permissions',
             templateUrl: 'app/views/permissions.html',
             controller: ''
-
         })
 });

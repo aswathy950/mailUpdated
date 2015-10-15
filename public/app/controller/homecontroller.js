@@ -49,4 +49,3 @@ myApp.controller('homeController', [
             delete $window.localStorage.user;
         };
     }
-]);

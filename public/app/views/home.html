@@ -1,13 +1,17 @@
-<div >
-    <div class="sidebar" >
+<div>
+    <div class="sidebar">
         <h2>Welcome {{username}}!!</h2>
         <ul>
-            <a ui-sref="compose"><li>Compose</li></a>
-            <a ui-sref="home.inbox"><li>Inbox</li></a>
-            <a ui-sref="home.sent"><li>Sent Item</li></a>
+            <a ui-sref="compose">
+                <li>Compose</li>
+            </a>
+            <a ui-sref="home.inbox">
+                <li>Inbox</li>
+            </a>
+            <a ui-sref="home.sent">
+                <li>Sent Item</li>
+            </a>
         </ul>
         <div ui-view></div>
     </div>
-
-
 </div>

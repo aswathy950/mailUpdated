@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Qbmail</title>
+
+    <title>QBmail</title>
     <link rel="shortcut icon" href="assets/img/qbicon.png" type="image/x-icon" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
     <link href="assets/css/styles.css" rel="stylesheet">
@@ -23,6 +23,9 @@
 
 
 
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app/scripts/socketWork.js" charset="utf-8"></script>
 </head>
 
 <body ng-app="myApp">
@@ -39,7 +42,6 @@
                     <li ng-show="isAdmin"><a ui-sref="register">Create Account</a></li>
                     <li ng-show="isAdmin"><a ui-sref="delete">Delete Account</a></li>
                     <li ng-show="isAdmin"><a ui-sref="update">Update Account</a></li>
-
                 </ul>
                 <ul id="menu" class="side-nav" onclick="hide()">
                     <li ng-show="isAdmin"><a ui-sref="register">Create Account</a></li>
@@ -49,7 +51,6 @@
                     <li><a ui-sref="inbox">Inbox</a></li>
                     <li><a ui-sref="sent">Sent Item</a></li>
                     <li><a ng-click="logout()">Logout</a></li>
-
                 </ul>
                 <a href="#" data-activates="slide-out" class="button-collapse" onclick="show_menu()"><i class="mdi-navigation-menu"></i></a>
             </nav>
@@ -81,7 +82,8 @@
                     </div>
                     <div ng-show="!isAuthenticated">{{error}}</div>
                     <div class="input-field col s">
-                        <button class="btn waves-effect waves-light" type="submit" name="submit" value="Login">Login</button>
+
+                        <button class="btn waves-effect waves-light" type="submit" name="submit" value="Login" onclick="initiateSocket()">Login</button>
                     </div>
 
                 </div>

@@ -25,6 +25,7 @@ myApp.service('Mailsrv', function($http, $q) {
         return deferred.promise;
     };
 
+<<<<<<< HEAD
     service.fetchInbox = function(id) {
         var deferred = $q.defer();
         $http.post("/home/inbox")
@@ -37,5 +38,7 @@ myApp.service('Mailsrv', function($http, $q) {
         return deferred.promise;
     };
 
+=======
+>>>>>>> f95fad272405a25fe245b10d20c3b9bee9e50780
     return service;
 });
