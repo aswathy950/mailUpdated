@@ -25,9 +25,9 @@ module.exports = function(app) {
 
     apiRoutes.post('/login', urlencodedParser, function(req, res) {
         function readInbox(user) {
-            var sqlQuery = 'select * from message_details where message_id in (' +
-                'select message_id from message where thread_id in(' +
-                'select thread_id from thread where user_id = ?))';
+            var sqlQuery =  'select * from message_details where message_id in (' +
+                            'select message_id from message where thread_id in(' +
+                            'select thread_id from thread where user_id = ?))';
             var rows = [];
             sql.query(sqlQuery, [user.user_id], function(err, result) {
                 if (!err) {

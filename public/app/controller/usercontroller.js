@@ -6,7 +6,8 @@ myApp.controller('userController', [
     '$state',
     'userList',
     function($rootScope, $scope, $window, Mailsrv, $state, userList) {
-        console.log(userList.user_details);
-        $scope.users = userList.user_details;
+        var data = JSON.parse($window.localStorage.user);
+        $scope.users = data.userList.user_details;
+        console.log('UserController'+data);
     }
 ]);

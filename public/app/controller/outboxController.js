@@ -1,4 +1,4 @@
-myApp.controller('inboxController', [
+myApp.controller('outboxController', [
     '$rootScope',
     '$scope',
     'Mailsrv',
@@ -8,7 +8,7 @@ myApp.controller('inboxController', [
         var data = JSON.parse(localStorage.getItem('user'));
         var arr = [];
         for(i=0; i < data.mails.length; i++) {
-            if(data.mails[i].to_mail == data.user_details.email) {
+            if(data.mails[i].from_mail == data.user_details.email) {
                 console.log('pushed');
                 arr.push(data.mails[i]);
             }

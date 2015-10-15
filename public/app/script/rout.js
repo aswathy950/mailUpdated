@@ -35,21 +35,20 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
                 // }
             // }
         })
-        .state('sent', {
+        .state('home.sent', {
             url: '/sent',
             templateUrl: 'app/views/sent.html',
-
+            controller: 'outboxController'
         })
         .state('userdetails', {
             url: '/userdetails',
             templateUrl: 'app/views/userlist.html',
             controller: "userController",
-            resolve:
-            // {
-                // userList: function(Mailsrv) {
-                //     return Mailsrv.login();
-                // }
-            // }
+            resolve: {
+                userList: function(Mailsrv) {
+                    return Mailsrv.login();
+                }
+            }
         })
         .state('compose', {
             url: '/compose',
